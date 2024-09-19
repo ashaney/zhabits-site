@@ -1,115 +1,168 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { ChevronRight, Star, Users, Zap, MousePointer2, BarChart } from 'lucide-react'
+import Link from 'next/link'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+export default function LandingPage() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
-export default function Home() {
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
+
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      <div className="fixed inset-0 bg-purple-900 opacity-50 mix-blend-multiply pointer-events-none" />
+      
+      {/* Custom cursor */}
+      <motion.div
+        className="custom-cursor fixed w-6 h-6 rounded-full bg-[#20c9d8] mix-blend-difference pointer-events-none z-50"
+        animate={{ x: mousePosition.x - 12, y: mousePosition.y - 12 }}
+        transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-50 backdrop-blur-md">
+        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zhabits</Link>
+          <div className="space-x-4">
+            <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
+            <a href="/roadmap.html" className="text-white hover:text-[#20c9d8] transition-colors">Roadmap</a>
+            <a href="/about.html" className="text-white hover:text-[#20c9d8] transition-colors">About</a>
+            <a href="mailto:team@zhabits.com" className="text-white hover:text-[#20c9d8] transition-colors">Contact</a>
+            <a href="/terms.html" className="text-white hover:text-[#20c9d8] transition-colors">Terms</a>
+            <a href="/privacy.html" className="text-white hover:text-[#20c9d8] transition-colors">Privacy</a>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        <div className="container mx-auto px-6 text-center">
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-[#20c9d8] text-transparent bg-clip-text"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Build Atomic Habits
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Read our docs
-          </a>
+            Transform your life with zhabits, the app inspired by 'Atomic Habits' that helps you create and maintain tiny habits for remarkable results.
+          </motion.p>
+          <motion.a 
+            href="https://zhabits.app" 
+            className="bg-[#20c9d8] text-black font-bold py-3 px-8 rounded-full inline-flex items-center hover:bg-[#1ab7c5] transition-colors"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Start Your Journey <ChevronRight className="ml-2" />
+          </motion.a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-purple-900 bg-opacity-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">Atomic Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { icon: Star, title: "1% Better Every Day", description: "Focus on small improvements that compound over time for significant results." },
+              { icon: Users, title: "Identity-Based Habits", description: "Build habits that align with the type of person you want to become." },
+              { icon: Zap, title: "Habit Stacking", description: "Link new habits to existing ones for easier integration into your routine." },
+              { icon: BarChart, title: "Progress Tracking", description: "Visualize your habit formation and celebrate small wins along the way." }
+            ].map((feature, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-black bg-opacity-50 p-6 rounded-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <feature.icon className="w-12 h-12 text-[#20c9d8] mb-4" />
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-12 text-center">What Our Users Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {[
+              { name: "Alex", quote: "zhabits has helped me implement the concepts from 'Atomic Habits' in my daily life. The results are incredible!" },
+              { name: "Sam", quote: "The habit stacking feature in zhabits made it so much easier for me to build new, positive habits." }
+            ].map((testimonial, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-purple-900 bg-opacity-20 p-6 rounded-lg"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <p className="text-lg mb-4">"{testimonial.quote}"</p>
+                <p className="font-bold text-[#20c9d8]">- {testimonial.name}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-900 to-[#1ab7c5]">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-8">Ready to Transform Your Habits?</h2>
+          <p className="text-xl mb-12 max-w-2xl mx-auto">
+            Join thousands of users who are already building atomic habits with zhabits. Start your journey to lasting change today!
+          </p>
+          <motion.a 
+            href="https://zhabits.app" 
+            className="bg-[#20c9d8] text-black font-bold py-3 px-8 rounded-full inline-flex items-center hover:bg-[#1ab7c5] transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Launch App <MousePointer2 className="ml-2" />
+          </motion.a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black py-8">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zhabits</Link>
+            </div>
+            <div className="flex space-x-4">
+              <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
+              <Link href="/about" className="text-white hover:text-[#20c9d8] transition-colors">About</Link>
+              <Link href="/terms" className="text-white hover:text-[#20c9d8] transition-colors">Terms</Link>
+              <Link href="/privacy" className="text-white hover:text-[#20c9d8] transition-colors">Privacy</Link>
+            </div>
+          </div>
+          <div className="mt-8 text-center text-gray-400 text-sm">
+            © {new Date().getFullYear()} zhabits. All rights reserved.
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
