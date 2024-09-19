@@ -61,7 +61,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Transform your life with zhabits, the app inspired by 'Atomic Habits' that helps you create and maintain tiny habits for remarkable results.
+            Transform your life with zhabits, the app inspired by &ldquo;Atomic Habits&rdquo; that helps you create and maintain tiny habits for remarkable results.
           </motion.p>
           <motion.a 
             href="https://zhabits.app" 
@@ -108,7 +108,7 @@ export default function LandingPage() {
           <h2 className="text-4xl font-bold mb-12 text-center">What Our Users Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
-              { name: "Alex", quote: "zhabits has helped me implement the concepts from 'Atomic Habits' in my daily life. The results are incredible!" },
+              { name: "Alex", quote: "zhabits has helped me implement the concepts from &lsquo;Atomic Habits&rsquo; in my daily life. The results are incredible!" },
               { name: "Sam", quote: "The habit stacking feature in zhabits made it so much easier for me to build new, positive habits." }
             ].map((testimonial, index) => (
               <motion.div 
@@ -118,7 +118,7 @@ export default function LandingPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <p className="text-lg mb-4">"{testimonial.quote}"</p>
+                <p className="text-lg mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
                 <p className="font-bold text-[#20c9d8]">- {testimonial.name}</p>
               </motion.div>
             ))}
