@@ -36,8 +36,18 @@ export default function LandingPage() {
           <Link href="/" className="text-2xl font-bold text-[#20c9d8] mb-4 sm:mb-0">zHabits</Link>
           <div className="flex flex-wrap justify-center space-x-4">
             <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
-            <a href="/roadmap.html" className="text-white hover:text-[#20c9d8] transition-colors">Roadmap</a>
-            <a href="/about.html" className="text-white hover:text-[#20c9d8] transition-colors">About</a>
+            {/* Info dropdown */}
+            <div className="relative group">
+              <button className="text-white hover:text-[#20c9d8] transition-colors">
+                Info <span className="ml-1">▼</span>
+              </button>
+              <div className="absolute left-0 sm:left-auto sm:-right-4 mt-2 w-48 bg-black bg-opacity-90 rounded-md shadow-lg overflow-hidden z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out border border-white border-opacity-20">
+                <a href="/faq.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors border-b border-white border-opacity-20">FAQ</a>
+                <a href="/changelog.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors border-b border-white border-opacity-20">Changelog</a>
+                <a href="/roadmap.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors border-b border-white border-opacity-20">Roadmap</a>
+                <a href="/about.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors">About</a>
+              </div>
+            </div>
             <a href="mailto:team@zHabits.com" className="text-white hover:text-[#20c9d8] transition-colors">Contact</a>
             <a href="/terms.html" className="text-white hover:text-[#20c9d8] transition-colors">Terms</a>
             <a href="/privacy.html" className="text-white hover:text-[#20c9d8] transition-colors">Privacy</a>
