@@ -31,9 +31,9 @@ export default function LandingPage() {
 
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-50 backdrop-blur-md">
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zhabits</Link>
-          <div className="space-x-4">
+        <nav className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-[#20c9d8] mb-4 sm:mb-0">zhabits</Link>
+          <div className="flex flex-wrap justify-center space-x-4">
             <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
             <a href="/roadmap.html" className="text-white hover:text-[#20c9d8] transition-colors">Roadmap</a>
             <a href="/about.html" className="text-white hover:text-[#20c9d8] transition-colors">About</a>
@@ -45,10 +45,10 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-6 text-center">
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
+        <div className="container mx-auto px-4 text-center">
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-[#20c9d8] text-transparent bg-clip-text"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-[#20c9d8] text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -56,7 +56,7 @@ export default function LandingPage() {
             Build Atomic Habits
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl mb-12 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -76,10 +76,10 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-purple-900 bg-opacity-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center">Atomic Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="py-16 sm:py-20 bg-purple-900 bg-opacity-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Atomic Features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Star, title: "1% Better Every Day", description: "Focus on small improvements that compound over time for significant results." },
               { icon: Users, title: "Identity-Based Habits", description: "Build habits that align with the type of person you want to become." },
@@ -103,13 +103,13 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-center">What Our Users Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <section className="py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">What Our Users Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { name: "Alex", quote: "zhabits has helped me implement the concepts from &lsquo;Atomic Habits&rsquo; in my daily life. The results are incredible!" },
-              { name: "Sam", quote: "The habit stacking feature in zhabits made it so much easier for me to build new, positive habits." }
+              { name: "My mom", quote: "What is this, exactly?" },
+              { name: "My friend T.", quote: "What's the elevator pitch?" }
             ].map((testimonial, index) => (
               <motion.div 
                 key={index} 
@@ -127,10 +127,10 @@ export default function LandingPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-900 to-[#1ab7c5]">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Ready to Transform Your Habits?</h2>
-          <p className="text-xl mb-12 max-w-2xl mx-auto">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-purple-900 to-[#1ab7c5]">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">Ready to Transform Your Habits?</h2>
+          <p className="text-lg sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto">
             Join thousands of users who are already building atomic habits with zhabits. Start your journey to lasting change today!
           </p>
           <motion.a 
@@ -146,12 +146,12 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="bg-black py-8">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <div className="mb-4 sm:mb-0">
               <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zhabits</Link>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap justify-center space-x-4">
               <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
               <Link href="/about" className="text-white hover:text-[#20c9d8] transition-colors">About</Link>
               <Link href="/terms" className="text-white hover:text-[#20c9d8] transition-colors">Terms</Link>
