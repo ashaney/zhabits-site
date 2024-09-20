@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight, Star, Users, Zap, MousePointer2, BarChart } from 'lucide-react'
 import Link from 'next/link'
+import { Instagram as InstagramIcon, X as XIcon } from '@mui/icons-material'
 
 export default function LandingPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -131,7 +132,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">Ready to Transform Your Habits?</h2>
           <p className="text-lg sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto">
-            Join thousands of users who are already building atomic habits with zhabits. Start your journey to lasting change today!
+            Join the tens of users who are already building atomic habits with zhabits. Start your journey to lasting change today!
           </p>
           <motion.a 
             href="https://zhabits.app" 
@@ -148,15 +149,16 @@ export default function LandingPage() {
       <footer className="bg-black py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            <div className="mb-4 sm:mb-0">
+            <div className="flex items-center space-x-4 mb-4 sm:mb-0">
               <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zhabits</Link>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
+                <InstagramIcon fontSize="medium" />
+              </a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
+                <XIcon fontSize="medium" />
+              </a>
             </div>
-            <div className="flex flex-wrap justify-center space-x-4">
-              <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
-              <Link href="/about" className="text-white hover:text-[#20c9d8] transition-colors">About</Link>
-              <Link href="/terms" className="text-white hover:text-[#20c9d8] transition-colors">Terms</Link>
-              <Link href="/privacy" className="text-white hover:text-[#20c9d8] transition-colors">Privacy</Link>
-            </div>
+            <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
           </div>
           <div className="mt-8 text-center text-gray-400 text-sm">
             © {new Date().getFullYear()} zhabits. All rights reserved.
