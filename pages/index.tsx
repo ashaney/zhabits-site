@@ -33,12 +33,12 @@ export default function LandingPage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-50 backdrop-blur-md">
         <nav className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-[#20c9d8] mb-4 sm:mb-0">zhabits</Link>
+          <Link href="/" className="text-2xl font-bold text-[#20c9d8] mb-4 sm:mb-0">zHabits</Link>
           <div className="flex flex-wrap justify-center space-x-4">
             <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
             <a href="/roadmap.html" className="text-white hover:text-[#20c9d8] transition-colors">Roadmap</a>
             <a href="/about.html" className="text-white hover:text-[#20c9d8] transition-colors">About</a>
-            <a href="mailto:team@zhabits.com" className="text-white hover:text-[#20c9d8] transition-colors">Contact</a>
+            <a href="mailto:team@zHabits.com" className="text-white hover:text-[#20c9d8] transition-colors">Contact</a>
             <a href="/terms.html" className="text-white hover:text-[#20c9d8] transition-colors">Terms</a>
             <a href="/privacy.html" className="text-white hover:text-[#20c9d8] transition-colors">Privacy</a>
           </div>
@@ -62,10 +62,18 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Transform your life with zhabits, the app inspired by &ldquo;Atomic Habits&rdquo; that helps you create and maintain tiny habits for remarkable results.
+            Transform your life with zHabits, the app inspired by &ldquo;
+            <a 
+              href="https://jamesclear.com/atomic-habits-summary" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Atomic Habits
+            </a>
+            &rdquo; that helps you create and maintain tiny habits for remarkable results.
           </motion.p>
           <motion.a 
-            href="https://zhabits.app" 
+            href="https://zHabits.app" 
             className="bg-[#20c9d8] text-black font-bold py-3 px-8 rounded-full inline-flex items-center hover:bg-[#1ab7c5] transition-colors"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,10 +140,10 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">Ready to Transform Your Habits?</h2>
           <p className="text-lg sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto">
-            Join the tens of users who are already building atomic habits with zhabits. Start your journey to lasting change today!
+            Join the tens of users who are already building atomic habits with zHabits. Start your journey to lasting change today!
           </p>
           <motion.a 
-            href="https://zhabits.app" 
+            href="https://zHabits.app" 
             className="bg-[#20c9d8] text-black font-bold py-3 px-8 rounded-full inline-flex items-center hover:bg-[#1ab7c5] transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -150,7 +158,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-              <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zhabits</Link>
+              <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zHabits</Link>
               <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
                 <InstagramIcon fontSize="medium" />
               </a>
@@ -158,10 +166,10 @@ export default function LandingPage() {
                 <XIcon fontSize="medium" />
               </a>
             </div>
-            <a href="https://zhabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
+            <a href="https://zHabits.app" className="text-white hover:text-[#20c9d8] transition-colors">Launch App</a>
           </div>
           <div className="mt-8 text-center text-gray-400 text-sm">
-            © {new Date().getFullYear()} zhabits. All rights reserved.
+            © {new Date().getFullYear()} zHabits. All rights reserved.
           </div>
         </div>
       </footer>
