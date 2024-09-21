@@ -41,7 +41,7 @@ export default function LandingPage() {
               <button className="text-white hover:text-[#20c9d8] transition-colors">
                 Info <span className="ml-1">▼</span>
               </button>
-              <div className="absolute left-0 sm:left-auto sm:-right-4 mt-2 w-48 bg-black bg-opacity-90 rounded-md shadow-lg overflow-hidden z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out border border-white border-opacity-20">
+              <div className="absolute left-0 mt-2 w-48 bg-black bg-opacity-90 rounded-md shadow-lg overflow-hidden z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out border border-white border-opacity-20">
                 <a href="/faq.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors border-b border-white border-opacity-20">FAQ</a>
                 <a href="/changelog.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors border-b border-white border-opacity-20">Changelog</a>
                 <a href="/roadmap.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors border-b border-white border-opacity-20">Roadmap</a>
