@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronRight, Star, Users, Zap, MousePointer2, BarChart } from 'lucide-react'
 import Link from 'next/link'
-import { Instagram as InstagramIcon, X as XIcon } from '@mui/icons-material'
+import { Facebook as FacebookIcon, Instagram as InstagramIcon, X as XIcon } from '@mui/icons-material'
 
 export default function LandingPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -169,10 +169,13 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <div className="flex items-center space-x-4 mb-4 sm:mb-0">
               <Link href="/" className="text-2xl font-bold text-[#20c9d8]">zHabits</Link>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61566292354817" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
+                <FacebookIcon fontSize="medium" />
+              </a>
+              <a href="https://instagram.com/zhabitsapp" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
                 <InstagramIcon fontSize="medium" />
               </a>
-              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
+              <a href="https://x.com/zhabitsapp" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#20c9d8] transition-colors">
                 <XIcon fontSize="medium" />
               </a>
             </div>
