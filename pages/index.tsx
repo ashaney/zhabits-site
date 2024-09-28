@@ -48,6 +48,7 @@ export default function LandingPage() {
                 <a href="/about.html" className="block px-4 py-2 text-sm text-white hover:bg-[#20c9d8] hover:text-black transition-colors">About</a>
               </div>
             </div>
+            <a href="/demo.html" className="text-white hover:text-[#20c9d8] transition-colors">Demo</a>
             <a href="mailto:team@zHabits.com" className="text-white hover:text-[#20c9d8] transition-colors">Contact</a>
             <a href="/terms.html" className="text-white hover:text-[#20c9d8] transition-colors">Terms</a>
             <a href="/privacy.html" className="text-white hover:text-[#20c9d8] transition-colors">Privacy</a>
